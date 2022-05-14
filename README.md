@@ -1,13 +1,13 @@
-# fetchee
+# fetchkit
 
 Fetch toolkits.
 
-## `import { json } from 'fetchee'`
+## `import { json } from 'fetchkit'`
 
 Build a POST request with JSON payload.
 
 ```JavaScript
-import { json } from 'fetchee'
+import { json } from 'fetchkit'
 
 fetch('https://httpbin.org/anything', json({ foo: 'bar' }))
 
@@ -78,12 +78,12 @@ fetch('https://httpbin.org/anything', {
 })
 ```
 
-## `import { assert } from 'fetchee'`
+## `import { assert } from 'fetchkit'`
 
 `response.ok` assertion
 
 ```JavaScript
-import { assert } from 'fetchee'
+import { assert } from 'fetchkit'
 
 try {
     const response = await fetch('https://httpbin.org/status/400')
@@ -95,12 +95,12 @@ try {
 }
 ```
 
-## `import { authorize } from 'fetchee'`
+## `import { authorize } from 'fetchkit'`
 
 Basic / bearer / token authorization factory
 
 ```JavaScript
-import { authorize } from 'fetchee'
+import { authorize } from 'fetchkit'
 
 // Basic auth
 const authorized = authorize({ username: 'foo', password: 'bar' })

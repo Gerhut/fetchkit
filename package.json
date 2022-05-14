@@ -1,5 +1,5 @@
 {
-  "name": "fetchee",
+  "name": "fetchkit",
   "version": "1.0.0",
   "description": "Fetch toolkits.",
   "main": "lib/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gerhut/fetchee.git"
+    "url": "git+https://github.com/Gerhut/fetchkit.git"
   },
   "keywords": [
     "fetch"
@@ -25,9 +25,9 @@
   "author": "George Cheng <Gerhut@GMail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Gerhut/fetchee/issues"
+    "url": "https://github.com/Gerhut/fetchkit/issues"
   },
-  "homepage": "https://github.com/Gerhut/fetchee#readme",
+  "homepage": "https://github.com/Gerhut/fetchkit#readme",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/mocha": "^9.1.1",
