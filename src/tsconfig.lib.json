@@ -1,0 +1,9 @@
+{
+  "extends": "..",
+  "compilerOptions": {
+    "composite": true,
+    "module": "CommonJS",
+    "outDir": "../lib",
+    "declarationDir": "../types"
+  }
+}

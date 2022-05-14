@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "Fetch toolkits.",
   "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "esm",
+    "lib",
+    "types",
+    "!*.tsbuildinfo"
+  ],
   "scripts": {
+    "build": "tsc --build src/tsconfig.lib.json src/tsconfig.esm.json",
     "test": "mocha"
   },
   "repository": {
@@ -31,6 +40,6 @@
     "prettier": "^2.6.2",
     "should": "^13.2.3",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.4"
   }
 }
