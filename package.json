@@ -9,7 +9,7 @@
     "esm",
     "lib",
     "types",
-    "!*.tsbuildinfo"
+    "!**/*.tsbuildinfo"
   ],
   "scripts": {
     "build": "tsc --build src/tsconfig.lib.json src/tsconfig.esm.json",
