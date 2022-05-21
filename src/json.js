@@ -1,4 +1,9 @@
-export function json(this: RequestInit | void, payload: unknown): RequestInit {
+/**
+ * @this {RequestInit | void}
+ * @param {unknown} payload
+ * @returns {RequestInit}
+ */
+export function json(payload) {
   const { headers: headersInit, ...init } = this ?? {};
   const headers = new Headers(headersInit);
   if (!headers.has("Content-Type")) {

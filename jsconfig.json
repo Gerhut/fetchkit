@@ -1,0 +1,7 @@
+{
+  "extends": "@tsconfig/recommended",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true
+  }
+}

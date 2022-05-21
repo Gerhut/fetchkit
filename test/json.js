@@ -1,5 +1,5 @@
 import should from "should";
-import { json } from "../src";
+import { json } from "../src/index.js";
 
 describe("json", () => {
   it("should convert payload into POST request", () => {
@@ -10,7 +10,7 @@ describe("json", () => {
         body: JSON.stringify({ foo: "bar" }),
       })
       .and.has.a.property("headers")
-      .match((headers: Headers) => {
+      .match((headers) => {
         should(headers.get("content-type")).eql("application/json");
       });
   });
@@ -24,7 +24,7 @@ describe("json", () => {
       json.call({ headers: { "Content-Type": "application/vnd+json" } }, {})
     )
       .has.a.property("headers")
-      .match((headers: Headers) => {
+      .match((headers) => {
         should(headers.get("content-type")).eql("application/vnd+json");
       });
   });
@@ -32,7 +32,7 @@ describe("json", () => {
   it("should keep other headers", () => {
     should(json.call({ headers: { Authorization: "Bearer token" } }, {}))
       .has.a.property("headers")
-      .match((headers: Headers) => {
+      .match((headers) => {
         should(headers.get("Authorization")).eql("Bearer token");
       });
   });

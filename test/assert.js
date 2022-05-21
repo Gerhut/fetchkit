@@ -1,5 +1,5 @@
 import should from "should";
-import { assert } from "../src";
+import { assert } from "../src/index.js";
 
 describe("assert", () => {
   for (const status of [200, 204]) {

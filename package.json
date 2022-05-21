@@ -2,17 +2,22 @@
   "name": "fetchkit",
   "version": "1.0.2",
   "description": "Fetch toolkits.",
+  "type": "module",
   "main": "lib/index.js",
-  "module": "esm/index.js",
+  "module": "src/index.js",
   "types": "types/index.d.ts",
+  "exports": {
+    "import": "./src/index.js",
+    "require": "./lib/index.js"
+  },
   "files": [
-    "esm",
+    "src",
     "lib",
     "types",
     "!**/*.tsbuildinfo"
   ],
   "scripts": {
-    "build": "tsc --build src/tsconfig.lib.json src/tsconfig.esm.json",
+    "build": "tsc --build src/jsconfig.json",
     "test": "mocha"
   },
   "repository": {

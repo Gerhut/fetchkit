@@ -1,5 +1,2 @@
-extension:
-  - ts
 require:
-  - ts-node/register
   - cross-fetch/polyfill
