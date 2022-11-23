@@ -1,7 +1,7 @@
 /**
- * @this {RequestInit | void}
+ * @this {IsomorphicRequestInit | void}
  * @param {unknown} payload
- * @returns {RequestInit}
+ * @returns {IsomorphicRequestInit}
  */
 export function json(payload) {
   const { headers: headersInit, ...init } = this ?? {};

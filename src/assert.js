@@ -1,19 +1,19 @@
 class HttpError extends Error {
   /** @readonly */
-  name = 'HttpError'
+  name = "HttpError";
 
   /**
-   * @param {Response} response
+   * @param {IsomorphicResponse} response
    */
   constructor(response) {
-    super(`HTTP ${response.status}`)
+    super(`HTTP ${response.status}`);
     /** @readonly */
-    this.response = response
+    this.response = response;
   }
 }
 
 /**
- * @param {Response} response
+ * @param {IsomorphicResponse} response
  */
 export function assert(response) {
   if (!response.ok) {

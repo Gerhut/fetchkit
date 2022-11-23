@@ -20,13 +20,18 @@ fetch('https://httpbin.org/anything', {
     },
     body: JSON.stringify({ foo: 'bar' })
 })
+```
 
+The default method is `POST`, but you can still overwrite it using `json.call`.
 
-// The default method is POST, but you can still overwrite it using `json.call`.
+```JavaScript
+import { json } from 'fetchkit'
 
-fetch('https://httpbin.org/anything', json.call({ method: 'PUT' }, { foo: 'bar' }))
+fetch('https://httpbin.org/anything', json.call({
+    method: 'PUT'
+}, { foo: 'bar' }))
 
-// ... which is same as ...
+// ... is same as ...
 
 fetch('https://httpbin.org/anything', {
     method: 'PUT',
@@ -35,9 +40,12 @@ fetch('https://httpbin.org/anything', {
     },
     body: JSON.stringify({ foo: 'bar' })
 })
+```
 
+`json.call` can also be used in providing other parameters, including headers.
 
-// `json.call` can also be used in providing other parameters, including headers.
+```JavaScript
+import { json } from 'fetchkit'
 
 fetch('https://httpbin.org/anything', json.call({
     headers: {
@@ -46,7 +54,7 @@ fetch('https://httpbin.org/anything', json.call({
     credentials: "omit"
 }, { foo: 'bar' }))
 
-// ... which is same as ...
+// ... is same as ...
 
 fetch('https://httpbin.org/anything', {
     method: 'POST',
@@ -57,9 +65,12 @@ fetch('https://httpbin.org/anything', {
     body: JSON.stringify({ foo: 'bar' }),
     credentials: "omit"
 })
+```
 
+The `Content-Type` header is also able to be overwritten.
 
-// Not only methods, the content-type header is also able to be overwritten
+```JavaScript
+import { json } from 'fetchkit'
 
 fetch('https://httpbin.org/anything', json.call({
     headers: {
@@ -89,6 +100,7 @@ try {
     const response = await fetch('https://httpbin.org/status/400')
     assert(response)
 } catch (e) {
+    console.log(e.name) // "HttpError"
     console.log(e.message) // "HTTP 400"
     console.log(e.response.status) // 400
     console.log(await e.response.text()) // ""

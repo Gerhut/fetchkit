@@ -1,8 +1,8 @@
 import should from "should";
 import { json } from "../src/index.js";
 
-describe("json", () => {
-  it("should convert payload into POST request", () => {
+describe("json", function () {
+  it("should convert payload into POST request", function () {
     should(json({ foo: "bar" }))
       .has.only.keys("method", "headers", "body")
       .and.has.properties({
@@ -15,11 +15,11 @@ describe("json", () => {
       });
   });
 
-  it("should keep method", () => {
+  it("should keep method", function () {
     should(json.call({ method: "PUT" }, {})).has.a.property("method", "PUT");
   });
 
-  it("should keep Content-Type headers", () => {
+  it("should keep Content-Type headers", function () {
     should(
       json.call({ headers: { "Content-Type": "application/vnd+json" } }, {})
     )
@@ -29,7 +29,7 @@ describe("json", () => {
       });
   });
 
-  it("should keep other headers", () => {
+  it("should keep other headers", function () {
     should(json.call({ headers: { Authorization: "Bearer token" } }, {}))
       .has.a.property("headers")
       .match((headers) => {
@@ -37,11 +37,11 @@ describe("json", () => {
       });
   });
 
-  it("should keep original body", () => {
+  it("should keep original body", function () {
     should(json.call({ body: "foo" }, {})).has.a.property("body", "foo");
   });
 
-  it("should keep other options", () => {
+  it("should keep other options", function () {
     should(json.call({ credentials: "omit" }, {})).has.a.property(
       "credentials",
       "omit"
